@@ -1,0 +1,39 @@
+from bs4 import BeautifulSoup
+import requests
+import time
+
+thenumbers_data = []
+url_movie_counter = list(range(1,5501, 100))
+
+def numbers_scraper(page):
+    url = 'https://www.the-numbers.com/movie/budgets/all/{}'
+    response = requests.get(url.format(page))
+    page = response.text
+    soup = BeautifulSoup(response.text, "lxml")
+    rows = soup.find('table').findAll('tr')[1:200:2]
+    try:
+        for i in range(100):
+            movie_title = rows[i].find('b').text
+            release_date = rows[i].find('a').text
+            budget = rows[i].findAll(class_="data")[1].text
+            domestic_gross = rows[i].findAll(class_="data")[2].text
+            worldwide_gross = rows[i].findAll(class_="data")[3].text
+            header = ['movie_title','release_date', 'budget', 'domestic_gross', 'worldwide_gross']
+            movie_dict = dict(zip(header, [movie_title, release_date, budget, domestic_gross, worldwide_gross]))
+            thenumbers_data.append(movie_dict)
+    except:
+        None 
+        print(i)
+    time.sleep(1)
+    return thenumbers_data
+
+pages = []
+loc = '{}01'
+for x in range(1,56):
+    pages.append(loc.format(str(x)))
+
+for page in pages:
+    numbers_scraper(page)
+
+import pandas as pd
+numdf = pd.DataFrame(thenumbers_data)

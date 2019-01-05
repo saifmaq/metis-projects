@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<title>simple music recommender</title>
+	</head>
+<body>
+
+	<style type="text/css"> 
+
+	h1 {text-align: center;}
+
+  	</style>
+
+	<h1>a simple music recommender</h1>
+
+{% block content %} 
+
+<p>using the topics discussed in ~20,000 pitchfork reviews to generate an <i>(edgier, alternative)</i> take on music that you may like</p>
+
+<p><b>enter the name of an artist:</b></p>
+<form method="POST">
+    <input name="text">
+    <input type="submit">
+</form>
+
+{% endblock %}
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html {% block html_attribs %}{% endblock html_attribs %}>
+  <head>
+    {%- block head %}
+    <title>simple music recommender</title>
+    {%- block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%- endblock meta %}
+
+    <title>{% block title %} simple music recommender {% endblock title %}</title>
+    {%- block style %}
+    {{ pure.css }}
+    {%- endblock style %}
+    {%- endblock head %}
+  </head>
+
+  <body> 
+
+   <style> h1 {text-align: center;} </style> 
+
+    <h1>a simple music recommender</h1>
+
+    {% block body_attribs %}
+
+
+    <p><b>pitchfork recommends:</b></p>
+    
+    <p2>
+      {% autoescape false %}
+
+     {{ 
+
+
+      recs 
+
+    }} 
+
+     {% endautoescape %}
+
+     <p>
+
+
+  {% endblock body_attribs %}
+    {%- block body %}
+    {%- block nav %}{% endblock nav %}
+    {%- block content %}{% endblock content %}
+    {%- block script %}{% endblock script %}
+    {%- endblock body %}
+  </body>
+</html>
