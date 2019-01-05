@@ -12,20 +12,25 @@ For this project, I implemented unsupervised learning with non-negative matrix f
 ### Exploratory Data Analysis / NMF Topic Modeling Modeling
 * [pitchfork_eda_modeling.ipynb](https://github.com/saifmaq/metis-projects/blob/master/music%20recommender/pitchfork_eda_modeling.ipynb) 
 
-After some cleaning and initial analysis of the data, I used NMF to perform topic and subtopic modeling on all of the reviews in the corpus. This serves as the base for the recommender. 
+After some cleaning and initial analysis of the data, I used NMF to perform topic and subtopic modeling on all of the reviews in the corpus. This serves as the base for the recommender. In order to glean further insights into the data, I also used VADER to perform sentiment analysis in order to identify potential trends within the corpus. 
   
 ### App 
 * [app.py](https://github.com/saifmaq/metis-projects/blob/master/music%20recommender/flask_app/app.py)
+
 Flask app which allows users to enter an artist and receive 10 recommendations
+
 * [pitchfork_data.p](https://github.com/saifmaq/metis-projects/blob/master/music%20recommender/flask_app/pitchfork_data.p)
+
 A pickled dataframe with topic and subtopic columns for each entry
+
 * [recommender.py](https://github.com/saifmaq/metis-projects/blob/master/music%20recommender/flask_app/recommender.py)
+
 A python function that makes the recommendations based on the topics and subtopics of the input 
 
 ### Slides
 * [slides.pdf](https://github.com/saifmaq/metis-projects/blob/master/music%20recommender/slides.pdf)
 
-The slides used when presenting the project include some observations about the data and extensive visualization performed using Tableau. 
+The slides used to present the project include some further observations about the data and extensive visualization performed using Tableau. 
 
 
 [Kaggle]: https://www.kaggle.com/nolanbconaway/pitchfork-data
