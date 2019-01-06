@@ -9,7 +9,7 @@ For this project, I implemented unsupervised learning with non-negative matrix f
 ### Data
 * I acquired the full text of 18,393 Pitchfork reviews from [Kaggle].
 
-### Exploratory Data Analysis / NMF Topic Modeling Modeling
+### Exploratory Data Analysis / NMF Topic Modeling 
 * [pitchfork_eda_modeling.ipynb](https://github.com/saifmaq/metis-projects/blob/master/music%20recommender/pitchfork_eda_modeling.ipynb) 
 
 After some cleaning and initial analysis of the data, I used NMF to perform topic and subtopic modeling on all of the reviews in the corpus. This serves as the base for the recommender. In order to glean further insights into the data, VADER was used to perform sentiment analysis. 
